@@ -11,41 +11,19 @@ const client = new Client({
 });
 
 client.once('ready', () => {
-    console.log(`הבוט פעיל! מחובר בתור ${client.user.tag}`);
+    console.log('Bot is online!');
 });
 
 client.on('messageCreate', message => {
     if (message.author.bot) return;
-    console.log(`הודעה התקבלה: ${message.content}`);
 
     if (message.content === '!hello') {
-        message.reply('שלום! אני הבוט שלך 👋');
+        message.reply('\u05e9\u05dc\u05d5\u05dd! \u05d0\u05e0\u05d9 \u05d4\u05d1\u05d5\u05d8 \u05e9\u05dc\u05da \u{1F44B}');
     }
 
-    if (message.content.includes('בוקר טוב') || message.content.includes('בוקר')) {
-        message.reply('בוקר מרנין כל נפש חי אשר שורצת על פני האדמה ☀️');
+    if (message.content.includes('\u05d1\u05d5\u05e7\u05e8 \u05d8\u05d5\u05d1') || message.content.includes('\u05d1\u05d5\u05e7\u05e8')) {
+        message.reply('\u05d1\u05d5\u05e7\u05e8 \u05de\u05e8\u05e0\u05d9\u05df \u05db\u05dc \u05e0\u05e4\u05e9 \u05d7\u05d9 \u05d0\u05e9\u05e8 \u05e9\u05d5\u05e8\u05e6\u05ea \u05e2\u05dc \u05e4\u05e0\u05d9 \u05d4\u05d0\u05d3\u05de\u05d4 \u2600\uFE0F');
     }
 });
 
 client.login(process.env.TOKEN);
-```
-
-שמור עם **Ctrl+S**
-
----
-
-**שלב 2 — צור קובץ `.env` בתיקייה `my-bot`:**
-
-פתח Notepad++ וצור קובץ חדש, שמור אותו בשם `.env` עם התוכן:
-```
-TOKEN=הטוקן_שלך_פה
-```
-
----
-
-**שלב 3 — צור קובץ `.gitignore`:**
-
-צור קובץ חדש בשם `.gitignore` עם התוכן:
-```
-.env
-node_modules
